@@ -1,0 +1,37 @@
+/* src/components/ArticlesList/ArticlesList.css */
+
+.articles-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.article {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.article h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.article p {
+  font-size: 1rem;
+}
+
+.read-more {
+  display: block;
+  margin-top: 0.5rem;
+  text-decoration: none;
+  color: #007bff;
+}

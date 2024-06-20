@@ -1,0 +1,35 @@
+/* src/components/DetailedArticleView/DetailedArticleView.css */
+.detailed-article {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .detailed-article img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .detailed-article h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .detailed-article p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
+  .back-button {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+  }
+  
