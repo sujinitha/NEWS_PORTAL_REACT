@@ -1,23 +1,24 @@
-// src/features/articles/articlesSlice.js
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiKey = '38f2d1c8c7064b788e9e33c3304ebd1a';
+const apiKey = process.env.REACT_APP_NEWS_API_KEY; // Use environment variable for API key
+const baseUrl = 'https://newsapi.org/v2/top-headlines';
 
 // Async thunk to fetch articles
 export const fetchArticles = createAsyncThunk(
   'articles/fetchArticles',
   async (category) => {
     try {
-      const response = await axios.get(`https://newsapi.org/v2/top-headlines?category=${category}&language=en&apiKey=${apiKey}`);
+      const response = await axios.get(`${baseUrl}?category=${category}&language=en&apiKey=${apiKey}`);
       return response.data.articles;
     } catch (error) {
+      console.error('Error fetching articles:', error.message);
       throw Error('Error fetching articles');
     }
   }
 );
 
+// Slice creation
 const articlesSlice = createSlice({
   name: 'articles',
   initialState: {
@@ -25,7 +26,9 @@ const articlesSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {},
+  reducers: {
+    // Add reducers if needed
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticles.pending, (state) => {
