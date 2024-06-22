@@ -3,7 +3,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiKey = '38f2d1c8c7064b788e9e33c3304ebd1a'; // Replace with your NewsAPI key
+const apiKey = process.env.REACT_APP_NEWS_API_KEY;
+console.log('API Key:', apiKey); // Debugging line
 
 // Async thunk to fetch articles
 export const fetchArticles = createAsyncThunk(
@@ -19,7 +20,8 @@ export const fetchArticles = createAsyncThunk(
       });
       return response.data.articles;
     } catch (error) {
-      throw Error('Error fetching articles');
+      console.error('Error fetching articles:', error); // Debugging line
+      throw new Error('Error fetching articles');
     }
   }
 );
